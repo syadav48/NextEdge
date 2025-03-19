@@ -29,3 +29,6 @@ URLs you can access in your browser are determined by how you organize your file
 3. Each folder represents a segment of the URL path
 
 When these convenstions are followed. the file automatically becomes available as a route.
+
+# Dynamic Routes: 
+Refer products folder for dynamic routes understanding.
