@@ -32,3 +32,15 @@ When these convenstions are followed. the file automatically becomes available a
 
 # Dynamic Routes: 
 Refer products folder for dynamic routes understanding.
+
+# Catch All Segments
+/docs/feature1/concept1
+/docs/feature1/concept2
+/docs/feature2/concept1
+/docs/feature2/concept2
+20Features * 20Concepts = 400
+20Features * 1Concept = 20
+1Feature * 1Concept = 1
+/docs/feature1/concept1/example1.../
+need just 1 file to handle
+Refer docs folder for understandings.
