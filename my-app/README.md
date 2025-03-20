@@ -89,3 +89,12 @@ refer layout.tsx file:
 # Nested Layouts
 Allow you to reuse layouts across multiple pages while maintaining a hierarchical structure.
 Refer to productId > layout.tsx file 
+
+# Multi Layouts: 
+In Next.js, multiple layouts allow different sections of your app to have separate layouts. Instead of using a single layout for all pages, you can apply different layouts to different parts of your application.
+
+For example:
+
+- A public layout for pages like Home and About
+- An admin layout for dashboard pages
+- A user layout for authenticated user pages
