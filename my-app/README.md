@@ -63,3 +63,12 @@ It is useful for a bunch of things:
 - Having a consistent way to organize internal files in your project.
 - Making it easier to group related files in your code editor.
 - Avoiding potential naming conflicts with future Next.js file naming conventions.
+refer _lib folder:
+
+# Route Groups:
+
+Lets us logically organize our routes and project files without impacting the URL structure.
+- refer auth folder to get the concept.
+- initially we are using pages inside auth, but to get rid of auth we can use parenthesis.
+
+Allow you to organize your application’s routes without affecting the URL structure. This is useful for structuring your project logically without exposing unnecessary folder names in the final URL.
