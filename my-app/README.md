@@ -45,11 +45,21 @@ Refer products folder for dynamic routes understanding.
 need just 1 file to handle
 Refer docs folder for understandings.
 
-# Not Found Page
+## Not Found Page
 refer to component not-found.
 NotFound component doesnot accept parms, instead it accept usePathName.
 usePathname only works in Client Component so use use-client.
 
-# File Colocation
+## File Colocation
 File colocation is the practice of placing related files together in the same directory to improve organization, maintainability, and discoverability. In Next.js, this typically means keeping files like components, styles, tests, and hooks alongside the relevant page or feature.
 refer- dashboard folder where we have a comp of linechart without worrying that this will be rendered while accessing dashboard.
+
+## Private Folders:
+A way to tell Next.js, "Hey, this folder is just for internal stuff - dont include it in the routing system"
+1. The folder and all its subfolder are excluded from routing.
+2. Add an underscore at the start of the folder name.
+It is useful for a bunch of things:
+- keeping your ui logic seperate from routing logic.
+- Having a consistent way to organize internal files in your project.
+- Making it easier to group related files in your code editor.
+- Avoiding potential naming conflicts with future Next.js file naming conventions.
