@@ -44,3 +44,8 @@ Refer products folder for dynamic routes understanding.
 /docs/feature1/concept1/example1.../
 need just 1 file to handle
 Refer docs folder for understandings.
+
+# Not Found Page
+refer to component not-found.
+NotFound component doesnot accept parms, instead it accept usePathName.
+usePathname only works in Client Component so use use-client.
