@@ -49,3 +49,7 @@ Refer docs folder for understandings.
 refer to component not-found.
 NotFound component doesnot accept parms, instead it accept usePathName.
 usePathname only works in Client Component so use use-client.
+
+# File Colocation
+File colocation is the practice of placing related files together in the same directory to improve organization, maintainability, and discoverability. In Next.js, this typically means keeping files like components, styles, tests, and hooks alongside the relevant page or feature.
+refer- dashboard folder where we have a comp of linechart without worrying that this will be rendered while accessing dashboard.
