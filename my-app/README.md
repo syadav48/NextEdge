@@ -85,3 +85,7 @@ Creating Layout:
 Default export a React Component from a layout.js or layout.tsx file
 The component takes a children prop, which next js populate with your page content. 
 refer layout.tsx file:
+
+# Nested Layouts
+Allow you to reuse layouts across multiple pages while maintaining a hierarchical structure.
+Refer to productId > layout.tsx file 
