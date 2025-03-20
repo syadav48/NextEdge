@@ -72,3 +72,16 @@ Lets us logically organize our routes and project files without impacting the UR
 - initially we are using pages inside auth, but to get rid of auth we can use parenthesis.
 
 Allow you to organize your application’s routes without affecting the URL structure. This is useful for structuring your project logically without exposing unnecessary folder names in the final URL.
+
+# Layout
+Pages are route specific components
+A layout is UI that shared between multiple pages in you app. It creates a consistent UI that renders throughout application.
+Think it as a: 
+Header
+Content
+Footer
+Now this Header and Footer will be fixed irrespective of page routing.
+Creating Layout:
+Default export a React Component from a layout.js or layout.tsx file
+The component takes a children prop, which next js populate with your page content. 
+refer layout.tsx file:
