@@ -135,3 +135,14 @@ The <Link> component is a react component that extends the HTML <a> element and 
 giving a different look and style to actives link.
 usePathName hook to be used to check active-link, and it works only in client component. (use client)
 refer auth folder/ layout file to get this concept
+
+## params and searchParams
+For a given URL: 
+params is a promise that resolves to an object containing the dynamic route parameter (like id)
+searchParams is a promise that resolves to an object containing the query parameters (like filtering and sorting)
+while page.tsx has access to both params and searchParams, layout.tsx only has acess to params.
+
+**client component("use client") doesnt support async await**
+In case of client compoent, we have a hook for promising resolving - use hook.
+In case of server compoent, we have a async await for promise resolving.
+
