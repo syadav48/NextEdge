@@ -112,3 +112,7 @@ Two ways to handle metadata in layout.tsx or page.tsx files:
 - When metadata exsists in multiple places along a route, they merge together with page metadata overriding layout metadata for matching properties.
 
 to use the client componnet with metadata import from another file: refer counter folder
+
+# Title Metadata
+- The Title fields primary purpose is to define the document title 
+- It can be either a string or an **Object**
