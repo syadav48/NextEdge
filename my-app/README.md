@@ -98,3 +98,17 @@ For example:
 - A public layout for pages like Home and About
 - An admin layout for dashboard pages
 - A user layout for authenticated user pages
+
+# Routing metadata
+The Metadata API in Next.js is a powerful feature that lets you define metadta for each page
+Metadata ensures our content looks great when its shared or indexed by search engines.
+Two ways to handle metadata in layout.tsx or page.tsx files:
+1. export a static metadata object
+2. export a dynamic generateMetadata function
+
+## Metadata Rules:
+- Both layout.tsx and page.tsx can export metadata. Layout metadata applies to all its pages, while page metadata is specific to that page.
+- Metadata follows a top-down order, starting from the root level
+- When metadata exsists in multiple places along a route, they merge together with page metadata overriding layout metadata for matching properties.
+
+to use the client componnet with metadata import from another file: refer counter folder
