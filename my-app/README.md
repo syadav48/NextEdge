@@ -145,4 +145,4 @@ while page.tsx has access to both params and searchParams, layout.tsx only has a
 **client component("use client") doesnt support async await**
 In case of client compoent, we have a hook for promising resolving - use hook.
 In case of server compoent, we have a async await for promise resolving.
-
+refer articles - folter to get the above
