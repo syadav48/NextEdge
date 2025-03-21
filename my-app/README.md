@@ -130,3 +130,8 @@ Link Component Navigation
 For client-side navigation, next.js gives us the <Link> component 
 
 The <Link> component is a react component that extends the HTML <a> element and its the primary way to navigate between routwes in Next Js. 
+
+# Active Link 
+giving a different look and style to actives link.
+usePathName hook to be used to check active-link, and it works only in client component. (use client)
+refer auth folder/ layout file to get this concept
