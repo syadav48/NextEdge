@@ -116,3 +116,17 @@ to use the client componnet with metadata import from another file: refer counte
 # Title Metadata
 - The Title fields primary purpose is to define the document title 
 - It can be either a string or an **Object**
+
+# Navigations
+File based routing system
+Defining routes for our application's root, nested routes, dynamic routes, and catch-all routes
+We've been typing URLs directly in the browser to test three routes
+
+Users 
+- click on links
+- get redirected after certain actions
+
+Link Component Navigation
+For client-side navigation, next.js gives us the <Link> component 
+
+The <Link> component is a react component that extends the HTML <a> element and its the primary way to navigate between routwes in Next Js. 
