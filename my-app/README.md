@@ -151,3 +151,15 @@ refer articles - folter to get the above\
 Often we do this by history.push on a click handler
 refer order-product.
 here we are using redirect(refer reviewid) and useRouter hook for redirecting.
+
+# Template: 
+are similar to layout in that they are also UI shared between multiple pages in your app.
+whenever a user navigates between routes sharing templates, you get a completly fresh start
+- a new template instances is mounted 
+- DOM element are recreated
+- state is cleared
+- effects are resynchronized.
+You can use it to make multiple pages look consistent without rewriting the same code over and over.
+refer auth folder
+**Unlike** normal layouts, which persist their state when navigating between pages, templates reset their state whenever a new instance is rendered.
+

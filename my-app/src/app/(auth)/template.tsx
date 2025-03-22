@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 //usePathName hook to be used to check which link is active, and it works only in client component 
 const navLinks = [
@@ -15,8 +16,10 @@ export default function AuthLayout({
     children: React.ReactNode;
 }){
     const pathName = usePathname()
+    const [input, setInput] = useState("")
     return(
         <div>
+            <input value={input} onChange={(e) => setInput(e.target.value)}/>
             {navLinks.map((link) => {
                 const isActive = pathName === link.href || (pathName.startsWith(link.href) && link.href !== '/')
                 return(
