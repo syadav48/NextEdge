@@ -167,3 +167,11 @@ refer auth folder
 The file help us create loading states that user see while waiting for content to laod in specific route.
 refer blog to get this.
 
+## Error tsx: 
+Error boundary component must me client component
+refer reviewId to get this.
+- It automatically wraps route segments and their nested children in a react eror boundary
+- you cac create custom error UI
+- It isolates error to affected segments
+- it enable you to attempt to recover from error when requiring a full page reload.![alt text](image.png)
+
