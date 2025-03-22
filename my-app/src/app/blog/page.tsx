@@ -4,8 +4,13 @@ export const metadata = {
   },
 };
 
-export default function Blog() {
+export default async function Blog() {
+    await new Promise((resolve) => {
+      setTimeout(() => {
+        resolve("delay")
+      }, 2000)
+    })
     return (
-      <h1>Blogging</h1>
+      <h1>My Blogging</h1>
     );
   }

@@ -163,3 +163,7 @@ You can use it to make multiple pages look consistent without rewriting the same
 refer auth folder
 **Unlike** normal layouts, which persist their state when navigating between pages, templates reset their state whenever a new instance is rendered.
 
+## Loading tsx
+The file help us create loading states that user see while waiting for content to laod in specific route.
+refer blog to get this.
+
