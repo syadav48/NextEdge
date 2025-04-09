@@ -2,7 +2,6 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
 //usePathName hook to be used to check which link is active, and it works only in client component 
 const navLinks = [
     {name: "Register", href: '/register'},

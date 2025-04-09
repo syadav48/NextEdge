@@ -34,7 +34,8 @@ export default function RootLayout({
       >
         <header
         style={{
-          backgroundColor: 'lightblue',
+          backgroundColor: '#1F2937',
+          color: 'white',
           padding: '1rem'
         }} 
         >
@@ -43,7 +44,7 @@ export default function RootLayout({
         {children}
         <footer
         style={{
-          backgroundColor: 'ghostwhite',
+          backgroundColor: '#1F4A7C',
           padding: '1rem'
         }}
         >

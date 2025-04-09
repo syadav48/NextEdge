@@ -182,5 +182,182 @@ By strategically placing error.tsx files at different levels in your route folde
 Where you put your error.tsx file makes a huge difference - it determines exactly which parts of UI get affected when thing go wrong.    
 ** Check out the 26-30 Tutorial to get the above. Hard to digest.**
 
+# Next.js Templates
+
+## Core Behavior
+- 🔄 **Re-mount on navigation** between child routes (unlike Layouts which persist)
+- 🏗️ **Recreate DOM** elements during route transitions
+- ♻️ **Reset state** when navigating between sibling routes
+
+## When to Use Templates
+
+### Ideal Cases:
+| Use Case | Description |
+|----------|-------------|
+| **Fresh DOM State** | When you need components to completely reset on navigation |
+| **Effect Re-triggering** | When `useEffect` hooks should re-run on route changes |
+| **Route-Specific Wrappers** | Different containers for specific route groups |
+| **Clean State Transitions** | Forms that should reset when changing sections |
+
+### Practical Examples:
+1. Authentication flows (login/signup pages)
+2. Multi-step forms (wizard patterns)
+3. Tabbed interfaces where state shouldn't persist
+4. Pages with enter/exit animations
+
+## When NOT to Use
+- ❌ Persistent navigation elements (use Layouts)
+- ❌ Global state providers
+- ❌ Shared UI that should remain mounted
+
+## Key Differences from Layouts
+| Behavior          | Template              | Layout                |
+|-------------------|-----------------------|-----------------------|
+| **DOM Persistence** | Recreates on nav     | Persists              |
+| **State**          | Resets                | Maintains             |
+| **useEffect**      | Re-runs               | Doesn't re-run        |
+| **Performance**    | Higher cost           | More efficient        |
+
+## Best Practices
+1. **Use sparingly** - Default to Layouts when possible
+2. **Isolate templates** - Keep them close to the routes that need them
+3. **Monitor performance** - Excessive re-mounting can impact UX
+4. **Combine wisely** - Can be used with Layouts in nested routes
+
+
+# Next.js Layouts
+
+## Core Behavior
+- ♻️ **Persist across navigation** (unlike Templates which re-mount)
+- 🏗️ **Maintain DOM elements** during route transitions
+- 💾 **Preserve state** when navigating between child routes
+
+## When to Use Layouts
+
+### Ideal Cases:
+| Use Case | Description |
+|----------|-------------|
+| **Persistent UI** | Headers, footers, sidebars |
+| **Global State** | Auth providers, theme context |
+| **Shared Components** | Navigation, banners, modals |
+| **Performance Critical** | Avoid re-rendering heavy components |
+
+### Practical Examples:
+1. Main site navigation
+2. Dashboard shells
+3. Authentication wrappers
+4. Consistent page containers
+
+## When NOT to Use
+- ❌ Route-specific resets (use Templates)
+- ❌ Animations requiring re-mount
+- ❌ Forms that should clear on navigation
+
+## Key Differences from Templates
+| Behavior          | Layout                | Template              |
+|-------------------|-----------------------|-----------------------|
+| **DOM Persistence** | Maintains            | Recreates             |
+| **State**          | Preserves            | Resets                |
+| **useEffect**      | Runs once            | Re-runs on nav        |
+| **Performance**    | More efficient       | Higher cost           |
+
+## Best Practices
+1. **Default choice** - Use for most shared UI
+2. **Nest strategically** - Create layout hierarchies
+3. **Isolate client components** - Keep server components pure
+4. **Combine with Templates** - Use both in complex apps
+
+## Advanced Patterns
+- **Parallel Routes** - Show multiple pages simultaneously
+- **Intercepting Routes** - Modal-like experiences
+- **Conditional Layouts** - Different layouts for auth states
+
+## Route Groups
+
+### Basic Usage
+```bash
+app/
+├── (group-name)/
+│   ├── route1/
+│   └── route2/
+
+
+---
+
+### **Practical Scenarios**  
+1. **Marketing vs App Routes**:  
+   - `(marketing)` → Lightweight pages  
+   - `(app)` → Authenticated dashboard  
+
+2. **A/B Testing**:  
+   - `(variant-a)` and `(variant-b)` with different layouts  
+
+3. **API Versioning**:  
+   - `(v1)/api/` and `(v2)/api/`  
+
+Route groups help maintain clean project structure while keeping URLs simple! 🚀
+
+
+## Dynamic Routes
+
+### Basic Syntax
+```bash
+app/
+├── [param]/          # Single segment
+│   └── page.js       → /value
+└── [...path]/        # Catch-all
+    └── page.js       → /a/b/c
+```
+
+### Key Features
+- 🔗 **Flexible URLs**: Handle infinite variations
+- 📦 **Automatic params**: Access via `params` prop
+- 🧩 **Nestable**: Combine static + dynamic segments
+
+### Example: Blog System
+```jsx
+// app/blog/[slug]/page.js
+export default function Page({ params }) {
+  return <article>{params.slug}</article>;
+}
+```
+**URL**: `/blog/nextjs-tips` → `params = { slug: "nextjs-tips" }`
+
+### Advanced Usage
+| Pattern          | Syntax          | Example URL       | params Output        |
+|------------------|-----------------|-------------------|----------------------|
+| Single Segment   | `[param]`       | `/products/123`   | `{ param: "123" }`   |
+| Catch-All        | `[...path]`     | `/docs/a/b/c`     | `{ path: ["a","b","c"] }` |
+| Optional Catch-All | `[[...slug]]` | `/shop` or `/shop/x` | `{ slug?: string[] }` |
+
+### Best Practices
+1. **Type Safety**: Use TypeScript with `params`:
+   ```ts
+   interface Props {
+     params: {
+       slug: string;
+     };
+   }
+   ```
+2. **Data Fetching**: Combine with `generateStaticParams` for SSG
+3. **Validation**: Verify params match expected formats
+
+# Dynamic Route Segments in Next.js
+
+## Catch-All vs Optional Catch-All
+
+| Feature          | `[...path]`                  | `[[...slug]]`                |
+|------------------|------------------------------|------------------------------|
+| **Syntax**       | `app/[...path]/page.js`      | `app/[[...slug]]/page.js`    |
+| **Minimum Segments** | 1+ required              | 0+ (optional)                |
+| **Empty Path**   | 404 Error                   | Renders successfully         |
+| **Params**       | `{ path: string[] }`        | `{ slug?: string[] }`        |
+| **Ex**       | /store/electronics/phones/samsung       | /dashboard , /dashboard/setting  notifications        |
+
+## Examples
+
+### 1. Catch-All (`[...path]`)
+**Structure**:
+
 
 
