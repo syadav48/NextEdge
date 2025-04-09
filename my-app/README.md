@@ -180,4 +180,7 @@ Error always bubble up to find the closest parent error boundary.
 An error.tsx file handle errors not just for its own folder but also for all the nested segment file below too.
 By strategically placing error.tsx files at different levels in your route folders, you can control exactly how detailed your error handling texts.
 Where you put your error.tsx file makes a huge difference - it determines exactly which parts of UI get affected when thing go wrong.    
+** Check out the 26-30 Tutorial to get the above. Hard to digest.**
+
+
 
